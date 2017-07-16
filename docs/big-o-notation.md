@@ -30,4 +30,16 @@ Grows even quicker.
 
 E.g. traveling salesman problem (TSP). Network of cities, travel all with minimum of cost.
 
+## Examples
+
+How many calculations can a Big-O make during an hour, when PC does calcs 3,600,000,000 per hour.
+
+| Big-O | Values |
+------------------
+| 1 | infinity |
+| log N | infinity |
+| N | 3,600,0000,000 |
+| N^2 | 60,000 |
+| 2^N | 32 |
+| N! | 13 |
 
