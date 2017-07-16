@@ -1,0 +1,23 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Just some notes on different algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ibihim/algorithms.git"
+  },
+  "keywords": [
+    "algorithms",
+    "nodejs"
+  ],
+  "author": "Krzysztof Ostrowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibihim/algorithms/issues"
+  },
+  "homepage": "https://github.com/ibihim/algorithms#readme"
+}
