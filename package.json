@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/ibihim/algorithms/issues"
   },
-  "homepage": "https://github.com/ibihim/algorithms#readme"
+  "homepage": "https://github.com/ibihim/algorithms#readme",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }

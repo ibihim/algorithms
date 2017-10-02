@@ -1,2 +1,9 @@
+# tmp folders
 tmp
+logs
 
+# IDE folders
+.idea
+
+# JS folders
+node_modules
