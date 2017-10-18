@@ -1,31 +1,30 @@
 'use strict';
 
-const LIMIT = 3600000000;
-const twoToThePowerOfN = x => Math.pow(2, x);
+const raiseToPower = (number, power) => {
+    let n = 1;
+    let result = 1;
 
-const nForTwoN = function twoN(n, check) {
-    if (check > LIMIT) {
-        return n;
-    } else {
-        return twoN(n + 1, twoToThePowerOfN(n));
+    const calculatedPowers = { [n]: number };
+
+    // calculates one power to much, sometimes
+    while (n + 1 < power) {
+        const result = calculatedPowers[n] * calculatedPowers[n];
+
+        n *= 2;
+
+        calculatedPowers[n] = result;
     }
+
+    while (power !== 0) {
+        if (power - n >= 0) {
+            power -= n;
+            result *= calculatedPowers[n];
+        }
+
+        n /= 2;
+    }
+
+    return result;
 };
 
-const nForNPow2 = function nTwo(n, check) {
-    if (check > LIMIT) {
-        return n;
-    } else {
-        return nTwo(n + 1, Math.pow(n, 2));
-    }
-};
-
-const nExcl = (function nEx(n, check) {
-    if (check > LIMIT) {
-        return n;
-    } else {
-        return nEx(n + 1, check * n);
-    }
-})(1, 1);
-
-console.log(nExcl);
-
+module.exports = raiseToPower(2, 10);

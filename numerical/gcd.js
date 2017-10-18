@@ -1,12 +1,14 @@
 'use strict';
 
 const gcd = (a, b) => {
-    if (b === 0) {
-        return a;
+    while (b !== 0) {
+        const remainder = a % b;
+        // GCD(A, B) = GCD(B, remainder)
+        a = b;
+        b = remainder;
     }
 
-    return gcd(b, a % b);
+    return a;
 };
 
 module.exports = gcd;
-
