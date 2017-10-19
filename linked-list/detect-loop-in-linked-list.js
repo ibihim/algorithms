@@ -17,19 +17,21 @@ const forceAppend = (list1, list2) => {
     }
 
     if (isEmpty(list1.rest)) {
-        return list1.rest = list2;
+        list1.rest = list2;
+
+        return list1.rest;
     } else {
         forceAppend(list1.rest, list2);
     }
 };
 
 const tortoiseAndHare = (aPair) => {
-    let tortoisePair = aPair,
-        harePair = aPair.rest;
+    let tortoisePair = aPair;
+    let harePair = aPair.rest;
 
     while (true) {
         if (isEmpty(tortoisePair) || isEmpty(harePair)) {
-            return false
+            return false;
         }
 
         if (tortoisePair.first === harePair.first) {

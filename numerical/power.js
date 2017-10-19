@@ -8,11 +8,11 @@ const raiseToPower = (number, power) => {
 
     // calculates one power to much, sometimes
     while (n + 1 < power) {
-        const result = calculatedPowers[n] * calculatedPowers[n];
+        const tmp = calculatedPowers[n] * calculatedPowers[n];
 
         n *= 2;
 
-        calculatedPowers[n] = result;
+        calculatedPowers[n] = tmp;
     }
 
     while (power !== 0) {

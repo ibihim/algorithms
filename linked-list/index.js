@@ -1,11 +1,52 @@
 'use strict';
 
-class SinglyLinkedList {
-    /*
-        TODO add sentinel!
+const EMPTY = null;
+const isEmpty = (top) => top === EMPTY;
 
-        Work in progress!
-     */
+const create = (value, next = EMPTY) => ({
+    value, next,
+
+    *[Symbol.iterator]() {
+        let top = this.next;
+
+        while (top) {
+            yield top.value;
+            top = top.next;
+        }
+    }
+});
+
+const createSentinel = (next) => create(EMPTY, next);
+
+const fromArray = (values) => {
+    let lastValue = EMPTY;
+
+    for (let i = values.length - 1; i >= 0; i--) {
+        lastValue = create(values[i], lastValue);
+    }
+
+    return createSentinel(lastValue);
+};
+
+const of = (...values) => fromArray(values);
+
+const get = (index, top) => {
+    for (; index >= 0; index--) {
+        top = top.next;
+    }
+
+    return top;
+};
+
+const addAtBeginning = (newCell, top) => {
+    newCell.next = top.next;
+    top.next = newCell;
+
+    return top;
+};
+
+/*
+class SinglyLinkedList {
 
     constructor(value, next) {
         this.value = value;
@@ -95,3 +136,12 @@ class SinglyLinkedList {
         return null;
     }
 }
+*/
+
+module.exports = {
+    isEmpty,
+    fromArray,
+    of,
+    get,
+    addAtBeginning
+};
