@@ -4,7 +4,7 @@ const expect = require('chai').expect;
 const selectionSort = require('../../sorting/selection-sort');
 
 describe('selection sort', () => {
-    it.only('should sort items', () => {
+    it('should sort items', () => {
         const given = [4, 3, 2, 1];
         const expected = [1, 2, 3, 4];
 
