@@ -12,10 +12,11 @@ module.exports = (values) => {
             }
         }
 
-        const temp = values[j];
-
-        values[j] = values[smallestValueIndex];
-        values[smallestValueIndex] = temp;
+        if (smallestValueIndex !== j) {
+            const temp = values[j];
+            values[j] = values[smallestValueIndex];
+            values[smallestValueIndex] = temp;
+        }
     }
 
     return values;
